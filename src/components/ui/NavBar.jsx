@@ -26,7 +26,7 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
     tl.to(navBar.current, {
       y: 0,
       duration: 3,
-      delay: 0.5,
+      delay: 5,
       ease: "power4.inOut",
     });
   });
@@ -37,12 +37,20 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
         trigger: section,
         start: "top 375px",
         end: "bottom 300px",
-        // markers: true,
         animation: gsap
           .timeline()
+          .to(
+            ":root",
+            {
+              "--thumb-color": "#D1D1C7",
+              "--track-color": "#0E0E0C",
+            },
+            0
+          )
           .to(navBar.current, { color: "#DDDDD5" })
-          .to(button.current, { backgroundColor: "none", color: "none" }, 0)
-          .to(".menu", { backgroundColor: "#D1D1C7" }, 0)
+          // .to(button.current, { backgroundColor: "none", color: "none" }, 0)
+          // .to(".menu", { backgroundColor: "#D1D1C7" }, 0)
+          .to(logo.current, { color: "#DDDDD5" }, 0)
           .to(cta.current, { backgroundColor: "#D1D1C7", color: "#0E0E0C" }, 0)
           .to(".bg-secondary-100", { backgroundColor: "#0E0E0C" }, 0),
 
@@ -61,6 +69,7 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
         <svg
           ref={logo}
           width="80"
+          className="logo"
           height="45"
           viewBox="0 0 121 45"
           fill="currentColor"
@@ -101,7 +110,6 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
         ref={button}
         className="z-40 flex h-12 w-12 flex-col items-center justify-center gap-[4px] bg-transparent md:hidden"
         onClick={() => {
-          console.log("yex");
           setNavIsOpen((isOpen) => !isOpen);
         }}
       >

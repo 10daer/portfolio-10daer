@@ -7,6 +7,11 @@
     border: 1px solid red;
   } */
 
+  :root {
+    --thumb-color: #0e0e0c;
+    --track-color: #d1d1c7;
+  }
+
   ::-moz-selection {
     background: #d1d1c7;
   }
@@ -50,6 +55,19 @@
     @apply font-grotesk;
   }
 
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--thumb-color);
+    border-radius: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--track-color);
+  }
+
   h1,
   h2,
   h3,
@@ -63,6 +81,10 @@
 
   .font-outline-3 {
     -webkit-text-stroke: 4px #0e0e0c;
+  }
+
+  .font-outline-1 {
+    -webkit-text-stroke: 1px white;
   }
 }
 
