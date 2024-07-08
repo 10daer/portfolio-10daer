@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const links = [
+  {},
   {},
   { url: "#projects", title: "Projects" },
   { url: "#about", title: "About" },
@@ -39,7 +41,7 @@ function NavMenuList({ navIsOpen, setNavIsOpen }) {
           {
             left: "0",
             duration: 0.3,
-            delay: (i) => i * 0.04,
+            delay: 0.05,
             ease: "power1.out",
             stagger: 0.05,
           }
@@ -53,8 +55,8 @@ function NavMenuList({ navIsOpen, setNavIsOpen }) {
         .to(".backlay", { background: "none", duration: 0.4 })
         .to(menuRef.current, {
           left: "100vw",
-          duration: 0.4,
-          delay: (i) => i * 0.04,
+          duration: 0.3,
+          delay: 0.05,
           ease: "power1.in",
           stagger: 0.05,
         })
@@ -67,16 +69,24 @@ function NavMenuList({ navIsOpen, setNavIsOpen }) {
   return (
     <ul className="backlay fixed left-0  top-0 z-30 flex h-screen w-screen flex-col gap-0 font-semibold text-white md:hidden">
       {links.map((link, i) =>
-        i === 5 ? (
+        i === links.length - 1 ? (
           <li
             ref={(el) => (menuRef.current[i] = el)}
-            className="relative flex h-full w-full items-end justify-between gap-4 bg-accent-400 p-8 text-base"
+            className="relative flex h-auto w-full items-end justify-evenly gap-8 bg-accent-400 p-8 text-base"
             key={i}
           >
-            <a>Awwards</a>
-            <a>Instagram</a>
-            <a>Dribble</a>
-            <a>LinkedIn</a>
+            <a href="">
+              <Icon icon="fa6-brands:square-upwork" />
+            </a>
+            <a href="www.twitter.com/10daer">
+              <Icon icon="pajamas:twitter" />
+            </a>
+            <a href="www.github.com/10daer">
+              <Icon icon="skill-icons:github-light" />
+            </a>
+            <a href="www.linkedin.com/in/10daer">
+              <Icon icon="pajamas:linkedin" />
+            </a>
           </li>
         ) : (
           <li

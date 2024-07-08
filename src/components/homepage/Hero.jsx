@@ -70,7 +70,7 @@ export default function Hero() {
           delay: 0.75,
           duration: 1,
         })
-        .to(logoRef.current, { color: "#0E0E0C", duration: 0 })
+        .to(".prelay", { background: "none", duration: 0.4 })
         .fromTo(
           pieces,
           { x: 0 },
@@ -81,13 +81,18 @@ export default function Hero() {
               each: 0.2,
               ease: "power1.out",
             },
-            onComplete: () => {
-              if (preloaderRef.current) {
-                preloaderRef.current.remove();
-              }
-            },
           }
         )
+        .to(".prelay", { duration: 0, left: "100vw" })
+        .to(logoRef.current, { color: "#0E0E0C", duration: 0 }, "-=2")
+        .to("body", {
+          overflow: "auto",
+          onComplete: () => {
+            if (pieces) {
+              pieces.remove();
+            }
+          },
+        })
         .from(imgContainer.current, {
           scale: 1.3,
           duration: 0.75,
@@ -111,7 +116,7 @@ export default function Hero() {
       {/* Preloader */}
       <div
         ref={preloaderRef}
-        className="fixed left-0 top-0 z-50 flex h-screen w-screen flex-col items-center justify-center"
+        className="prelay fixed left-0 top-0 z-50 flex h-screen w-screen flex-col items-center justify-center bg-accent-400 opacity-100"
       >
         {[...Array(5)].map((_, i) =>
           i === 2 ? (

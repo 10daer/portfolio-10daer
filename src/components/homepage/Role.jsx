@@ -70,7 +70,7 @@ export default function Role({ forwardedRef }) {
     >
       <h1
         ref={textRef}
-        className="sticky top-24 flex h-[95vh] w-fit max-w-[100vw] flex-wrap gap-6  text-heading-1 font-black  leading-[1.25em] text-secondary-400 text-transparent md:text-heading-1 md:leading-[1.08em]"
+        className="sticky top-24 flex h-[95vh] w-fit max-w-[100vw] flex-wrap gap-6 text-heading-1  font-black leading-[1.25em]  text-secondary-400 text-transparent will-change-transform md:text-heading-1 md:leading-[1.08em]"
       >
         {createWords(text)}
       </h1>

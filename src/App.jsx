@@ -18,11 +18,9 @@ const App = () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  const sectionRefs = useRef([]); // Creating a sectionRefs array
+  const sectionRefs = useRef([]);
 
-  // Scrub animation of section headings
   useEffect(() => {
-    //TODO Learn useContext and useRef here
     const sectionHeadings = document.querySelectorAll(".section-heading");
     sectionHeadings.forEach((heading) => {
       const headings = heading.querySelectorAll(".heading");
@@ -47,8 +45,7 @@ const App = () => {
 
   return (
     <div className="bg-secondary-100">
-      <NavMenuList         setNavIsOpen={setNavIsOpen}
- navIsOpen={navIsOpen} />
+      <NavMenuList setNavIsOpen={setNavIsOpen} navIsOpen={navIsOpen} />
       <NavBar
         setNavIsOpen={setNavIsOpen}
         navIsOpen={navIsOpen}
