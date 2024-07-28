@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="my-[10%] overflow-hidden"
+      className="mt-[10%] overflow-hidden"
       aria-label="contact me"
     >
       <Heading title="Contact" />
@@ -73,11 +73,11 @@ export default function Contact() {
             action="/contact"
             autoComplete="off"
             // eslint-disable-next-line react/no-unknown-property
-            className="mt-10 font-grotesk"
+            className="mt-4 font-grotesk"
             method="POST"
           >
             <input type="hidden" name="form-name" value="contact" />
-            <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2">
               <div className="relative z-0">
                 <input
                   required

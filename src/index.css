@@ -94,14 +94,14 @@
 
 @layer components {
   .button {
-    @apply rounded-full bg-accent-300 px-8 py-3 text-secondary-200;
+    @apply rounded-full bg-accent-300 px-6 py-2 text-secondary-200;
   }
 }
 
 @layer utilities {
   .title {
     clip-path: polygon(0 0, 200% 0, 100% 100%, 0% 100%);
-    line-height: clamp(6rem, 18vw, 10rem); /* Set the desired line height */
+    line-height: clamp(6rem, 18vw, 10rem);
   }
 
   nav a:hover ~ .cursor {

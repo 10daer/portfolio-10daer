@@ -54,9 +54,9 @@ const App = () => {
       <Hero />
       <main className="px-5 md:px-10 xl:px-20 2xl:px-28">
         <Role forwardedRef={(el) => (sectionRefs.current[0] = el)} />
+        <Works forwardedRef={(el) => (sectionRefs.current[1] = el)} />
         <About />
         <Services />
-        <Works forwardedRef={(el) => (sectionRefs.current[1] = el)} />
         <Contact />
       </main>
       <Footer />

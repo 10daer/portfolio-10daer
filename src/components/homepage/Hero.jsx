@@ -64,7 +64,7 @@ export default function Hero() {
         )
         .to(logoRef.current, {
           position: "fixed",
-          top: 18,
+          top: 10,
           left: 20,
           scale: 1,
           delay: 0.75,

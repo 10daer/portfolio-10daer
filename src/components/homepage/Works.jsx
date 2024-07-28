@@ -10,7 +10,7 @@ export default function Works({ forwardedRef }) {
   return (
     <section
       ref={forwardedRef}
-      id="works"
+      id="projects"
       className="nav-change my-[10%] overflow-hidden"
     >
       <Heading title="Projects" />

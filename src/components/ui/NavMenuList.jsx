@@ -14,6 +14,7 @@ const links = [
 
 function NavMenuList({ navIsOpen, setNavIsOpen }) {
   const menuRef = useRef([]);
+  const color = useRef(null);
 
   const handleClick = (url) => {
     const target = document.querySelector(url);
@@ -32,6 +33,7 @@ function NavMenuList({ navIsOpen, setNavIsOpen }) {
 
   useEffect(() => {
     if (navIsOpen) {
+      color.current = document.querySelector(".navbar");
       gsap
         .timeline()
         .to(".navbar", { background: "transparent" })
@@ -44,23 +46,28 @@ function NavMenuList({ navIsOpen, setNavIsOpen }) {
             delay: 0.05,
             ease: "power1.out",
             stagger: 0.05,
-          }
+          },
+          0
         )
-        .to(".backlay", { backgroundColor: "#0E0E0C" })
+        .to(".backlay", { backgroundColor: "#0E0E0C", zIndex: 10 }, 0)
         .to(".logo", { color: "#DDDDD5" }, 0)
         .to(".menu", { backgroundColor: "#D1D1C7" }, 0);
     } else {
       gsap
         .timeline()
-        .to(".backlay", { background: "none", duration: 0.4 })
-        .to(menuRef.current, {
-          left: "100vw",
-          duration: 0.3,
-          delay: 0.05,
-          ease: "power1.in",
-          stagger: 0.05,
-        })
-        .to(".navbar", { background: "#fafaf9 " })
+        .to(".backlay", { background: "none", duration: 0.4, zIndex: -1 }, 0)
+        .to(
+          menuRef.current,
+          {
+            left: "100vw",
+            duration: 0.3,
+            delay: 0.05,
+            ease: "power1.in",
+            stagger: 0.05,
+          },
+          0
+        )
+        .to(".navbar", { background: "transparent" })
         .to(".logo", { color: "#0E0E0C" }, 0)
         .to(".menu", { backgroundColor: "#0E0E0C" }, 0);
     }

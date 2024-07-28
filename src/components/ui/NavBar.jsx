@@ -7,7 +7,6 @@ import RoundedButton from "./RoundedButton";
 
 export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
   const navBar = useRef(null);
-  const logo = useRef(null);
   const cta = useRef(null);
   const button = useRef(null);
   const tl = gsap.timeline();
@@ -62,7 +61,7 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
   return (
     <header
       ref={navBar}
-      className="navbar fixed top-0 z-30 flex w-full -translate-y-full items-center justify-between bg-secondary-100 px-5 py-3"
+      className="navbar fixed top-0 z-30 flex w-full -translate-y-full items-center justify-between bg-secondary-100 px-5 py-2"
     >
       {/* logo placeholder */}
       <div className="h-8 w-20 opacity-0 "></div>
@@ -79,6 +78,7 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
           </a>
         ))}
       </nav>
+
       <RoundedButton style="hidden md:flex" backgroundColor="#666666">
         <a
           ref={cta}
@@ -92,24 +92,24 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
       </RoundedButton>
       <button
         ref={button}
-        className="z-40 flex h-12 w-12 flex-col items-center justify-center gap-[4px] bg-transparent md:hidden"
+        className="z-40 flex h-10 w-10 flex-col items-center justify-center gap-[4px] bg-transparent md:hidden"
         onClick={() => {
           setNavIsOpen((isOpen) => !isOpen);
         }}
       >
         <div
-          className={`menu h-2 w-full origin-center rounded-lg transition-transform ${
-            navIsOpen ? "translate-y-[12px] rotate-45 transform" : ""
+          className={`menu h-[6px] w-full origin-center rounded-lg bg-accent-400 transition-transform ${
+            navIsOpen ? "translate-y-[10px] rotate-45 transform" : ""
           }`}
         ></div>
         <div
-          className={`menu ml-2 h-2 w-full rounded-lg transition-opacity ${
+          className={`menu ml-2 h-[6px] w-full rounded-lg bg-accent-400 transition-opacity ${
             navIsOpen ? "opacity-0" : ""
           }`}
         ></div>
         <div
-          className={`menu h-2 w-full origin-center rounded-lg transition-transform ${
-            navIsOpen ? "-translate-y-[12px] -rotate-45 transform" : ""
+          className={`menu h-[6px] w-full origin-center rounded-lg bg-accent-400 transition-transform ${
+            navIsOpen ? "-translate-y-[10px] -rotate-45 transform" : ""
           }`}
         ></div>
       </button>
