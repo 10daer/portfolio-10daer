@@ -107,16 +107,18 @@ export default function Works({ forwardedRef }) {
         } w-full flex-col items-center justify-center px-5 pb-[6rem]`}
       >
         <div className="sticky top-4 flex h-screen w-full flex-grow flex-col items-center justify-start gap-8 pt-[20vh] text-secondary-400">
-          <ul className="bord absolute right-0 top-0 flex h-10 w-40 items-center justify-between">
+          <ul className="bord absolute right-0 top-0 flex h-10 w-40 cursor-pointer items-center justify-between">
             {["Front", "Back", "Mobile"].map((el) => (
               <li key={el} onClick={() => handleFilter(el)}>
                 {el.toUpperCase()}
               </li>
             ))}
           </ul>
+
           <h1 ref={headingRef} className="text-3xl font-bold">
             My Projects Catalogue
           </h1>
+
           <div ref={subheadingRef} className="mb-16 text-3xl font-extrabold">
             <h2 className="mb-10">
               Here are some of the projects that made my experience...
@@ -131,7 +133,10 @@ export default function Works({ forwardedRef }) {
 
         {!isLoading && (
           <>
-            <div ref={scrollerRef} className="block h-[75vh] w-full"></div>
+            <div
+              ref={scrollerRef}
+              className="-z-10 block h-[75vh] w-full"
+            ></div>
 
             {filteredProjects.map((project, index) => (
               <Project key={project.title} project={project} index={index} />
