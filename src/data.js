@@ -1,40 +1,48 @@
-// projectsData.js
-import ibgroup from "/src/assets/images/ib-group-desktop.webp";
-import memento from "/src/assets/images/memento-desktop.webp";
-import acc from "/src/assets/images/acc-square.webp";
-import daddy from "/src/assets/images/godaddy-desktop.webp";
-import sunnyside from "/src/assets/images/sunny-side-square.webp";
-
 const projectsData = [
   {
-    title: "IB Group Vietnam Website",
-    description: "Web Design / Frontend Development",
-    imageSrc: ibgroup,
     link: "https://musical-stroopwafel-1c2327.netlify.app/landing.html",
+    img: "ib-group-desktop.webp",
+    alt: "IBGroup vietnam website mockup",
+    name: "ibgroup vietnam website",
+    type: "Web Design • Frontend Development",
+    year: "2023",
+    tools: "HTML • TailwindCSS • JavaScript • Figma",
   },
   {
-    title: "Memento Studio Landing Page",
-    description: "Web Design / Frontend Development",
-    imageSrc: memento,
     link: "https://mementostudio.netlify.app/",
+    img: "memento-desktop.webp",
+    alt: "memento landing page mockup",
+    name: "memento studio landing page",
+    type: "Frontend Development",
+    year: "2023",
+    tools: "HTML • TailwindCSS • JavaScript",
   },
   {
-    title: "Real Business Accountants",
-    description: "Web Design / Frontend Development",
-    imageSrc: acc,
     link: "https://realbusinessaccountants.netlify.app",
+    img: "acc-square.webp",
+    alt: "real business accountant project mockup",
+    name: "real business accountants",
+    type: "Web Design • Frontend Development",
+    year: "2023",
+    tools: "HTML • CSS • JavaScript • Figma",
   },
   {
-    title: "GoDaddy Landing Page Clone",
-    description: "Web Design / Frontend Development",
-    imageSrc: daddy,
     link: "https://godaddyuiclone.netlify.app",
+    img: "godaddy-desktop.webp",
+    alt: "godaddy clone page mockup",
+    name: "GODADDY LANDING PAGE CLONE",
+    type: "Frontend Development",
+    year: "2023",
+    tools: "HTML • TailwindCSS • JavaScript",
   },
   {
-    title: "Sunnyside Landing Page",
-    description: "Web Design / Frontend Development",
-    imageSrc: sunnyside,
     link: "https://sunnysidechallenge.netlify.app",
+    img: "sunny-side-square.webp",
+    alt: "sunnyside project mockup",
+    name: "SUNNYSIDE LANDING PAGE",
+    type: "Frontend Development",
+    year: "2022",
+    tools: "HTML • TailwindCSS • JavaScript",
   },
 ];
 

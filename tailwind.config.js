@@ -24,6 +24,7 @@ export default {
       },
       fontFamily: {
         general: ["GeneralSans-Variable", "sans-serif"],
+        domaine: ["TestDomaineSansDisplay-Regular", "sans-serif"],
         grotesk: ["CabinetGrotesk-Variable", "sans-serif"],
       },
       colors: {

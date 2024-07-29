@@ -31,7 +31,7 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
   });
 
   useEffect(() => {
-    sectionRefs.forEach((section) => {
+    sectionRefs.forEach((section, index) => {
       ScrollTrigger.create({
         trigger: section,
         start: "top 375px",
@@ -44,9 +44,14 @@ export default function NavBar({ sectionRefs, setNavIsOpen, navIsOpen }) {
               "--thumb-color": "#F2F2F2",
               "--track-color": "#0E0E0C",
             },
-            0
+            "-=0.5"
           )
-          .to(navBar.current, { color: "#DDDDD5" })
+          .to(
+            navBar.current,
+            index === 1
+              ? { color: "#DDDDD5", y: "-100%" }
+              : { color: "#DDDDD5" }
+          )
           .to(button.current, { backgroundColor: "none", color: "none" }, 0)
           .to(".menu", { backgroundColor: "#D1D1C7" }, 0)
           .to(".logo", { color: "#DDDDD5" }, 0)

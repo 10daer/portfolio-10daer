@@ -1,7 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect, useRef, useState } from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/ui/NavBar";
 import Hero from "./components/homepage/Hero";
@@ -54,9 +53,9 @@ const App = () => {
       <Hero />
       <main className="px-5 md:px-10 xl:px-20 2xl:px-28">
         <Role forwardedRef={(el) => (sectionRefs.current[0] = el)} />
-        <Works forwardedRef={(el) => (sectionRefs.current[1] = el)} />
         <About />
         <Services />
+        <Works forwardedRef={(el) => (sectionRefs.current[1] = el)} />
         <Contact />
       </main>
       <Footer />

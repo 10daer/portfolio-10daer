@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { useRef, useEffect, useState } from "react";
-import heroImg from "/src/assets/images/heroimg.webp";
+import heroImg from "/images/heroimg.webp";
 import Logo from "../ui/Logo";
 
 const words = [
